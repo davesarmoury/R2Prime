@@ -1,0 +1,3 @@
+[submodule "train_piper/piper"]
+	path = train_piper/piper
+	url = git@github.com:rhasspy/piper.git
