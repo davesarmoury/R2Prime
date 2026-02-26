@@ -1,3 +1,9 @@
 [submodule "train_piper/piper"]
 	path = train_piper/piper
 	url = git@github.com:rhasspy/piper.git
+[submodule "pca9685_ros2_control"]
+	path = pca9685_ros2_control
+	url = https://github.com/davesarmoury/pca9685_ros2_control.git
+[submodule "ros_odrive"]
+	path = ros_odrive
+	url = https://github.com/odriverobotics/ros_odrive.git
