@@ -33,3 +33,19 @@ chmod +x jetsons
 
 sudo dpkg -i stereolabs-zedlink-duo_1.4.0-LI-MAX96712-L4T36.4.0_arm64.deb
 sudo apt install -f
+
+## Build Everything
+
+source /opt/ros/humble/setup.bash
+
+mkdir -p ~/r2_ws/src
+cd ~/r2_ws/src
+git clone --recurse-submodules git@github.com:davesarmoury/R2Prime.git
+cd ..
+rosdep install --from-paths src --ignore-src -y
+
+## CAN
+
+sudo /opt/nvidia/jetson-io/jetson-io.py
+
+sudo ip link set can0 up type can bitrate 1000000
