@@ -49,3 +49,11 @@ rosdep install --from-paths src --ignore-src -y
 sudo /opt/nvidia/jetson-io/jetson-io.py
 
 sudo ip link set can0 up type can bitrate 1000000
+
+## Spotify
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cargo install spotifyd --locked
+
+spotifyd
