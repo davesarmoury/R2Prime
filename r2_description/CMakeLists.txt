@@ -25,7 +25,7 @@ endif()
 
 install(DIRECTORY
   urdf
-#  meshes
+  meshes
   launch
   DESTINATION share/${PROJECT_NAME}/
 )

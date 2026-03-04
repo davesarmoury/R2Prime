@@ -1,5 +1,96 @@
 <?xml version="1.0"?>
 
 <robot name="r2" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+        <mesh filename="package://r2_description/meshes/R2_Feet.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
   
+  <joint name="ankle_joint" type="revolute">
+    <origin xyz="0 0 0.136726" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="legs_link" />
+    <axis xyz="0 1 0" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.3054326" velocity="10.0" />
+  </joint>
+
+  <link name="legs_link">
+    <visual>
+      <origin xyz="0 0 -0.136726" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/R2_Legs.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="shoulder_joint" type="revolute">
+    <origin xyz="0 0 0.56548" rpy="0 0 0" />
+    <parent link="legs_link" />
+    <child link="body_link" />
+    <axis xyz="0 1 0" rpy="0 0 0" />
+    <limit effort="0" lower="-0.6108652" upper="0" velocity="10.0" />
+  </joint>
+
+  <link name="body_link">
+    <visual>
+      <origin xyz="0 0 -0.702206" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/R2_Body.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="neck_joint" type="revolute">
+    <origin xyz="0 0 0.12687" rpy="0 0 0" />
+    <parent link="body_link" />
+    <child link="dome_link" />
+    <axis xyz="0 0 1" rpy="0 0 0" />
+    <limit effort="0" lower="-3.14159" upper="3.14159" velocity="10.0" />
+  </joint>
+
+  <link name="dome_link">
+    <visual>
+      <origin xyz="0 0 -0.829076" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/R2_Dome.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="center_leg_joint" type="fixed">
+    <origin xyz="0 0 -0.56548" rpy="0 0 0" />
+    <parent link="body_link" />
+    <child link="center_leg_link" />
+  </joint>
+
+  <link name="center_leg_link">
+    <visual>
+    <origin xyz="0 0 -0.136726" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/R2_CenterAnkle.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="center_ankle_joint" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="center_leg_link" />
+    <child link="center_foot_link" />
+    <axis xyz="0 1 0" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.3054326" velocity="10.0" />
+  </joint>
+
+  <link name="center_foot_link">
+    <visual>
+    <origin xyz="0 0 -0.136726" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/R2_Center_Foot.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+    
 </robot>
