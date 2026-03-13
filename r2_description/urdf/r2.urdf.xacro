@@ -10,7 +10,26 @@
       <material name="Wite"> <color rgba="0.9 0.9 0.9 1.0"/> </material>
     </visual>
   </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <origin xyz="0 1 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="left_wheel_link" />
+    <axis xyz="0 1 0" rpy="0 0 0" />
+    <limit effort="100" velocity="1.0"/>
+  </joint>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <origin xyz="0 -1 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="right_wheel_link" />
+    <axis xyz="0 1 0" rpy="0 0 0" />
+    <limit effort="100" velocity="1.0"/>
+  </joint>
   
+  <link name="left_wheel_link" />
+  <link name="right_wheel_link" />
+
   <joint name="ankle_joint" type="revolute">
     <origin xyz="0 0 0.136726" rpy="0 0 0" />
     <parent link="base_link" />
@@ -98,5 +117,7 @@
       <material name="Wite"> <color rgba="0.9 0.9 0.9 1.0"/> </material>
     </visual>
   </link>
+
+  <xacro:include filename="$(find r2_control)/urdf/r2.control.urdf.xacro" />
     
 </robot>

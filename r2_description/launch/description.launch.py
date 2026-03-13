@@ -20,7 +20,10 @@ def generate_launch_description():
             parameters=[{
                 'robot_description': ParameterValue(
                 Command(['xacro ', str(urdf)]), value_type=str
-            )
-        }]
+                )
+            }],
+            remappings=[
+                ('~/robot_description', '/robot_description'),
+           ]
         )
     ])

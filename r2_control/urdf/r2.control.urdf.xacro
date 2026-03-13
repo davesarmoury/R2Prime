@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <ros2_control name="r2" type="system">
+      <hardware>
+        <plugin>odrive_ros2_control_plugin/ODriveHardwareInterface</plugin>
+        <param name="can">can0</param>
+      </hardware>
+
+      <joint name="left_wheel_joint">
+        <param name="node_id">1</param>
+      </joint>
+
+      <joint name="right_wheel_joint">
+        <param name="node_id">2</param>
+      </joint>
+
+      <!-- transmission name="left_transmission">
+        <plugin>transmission_interface/SimpleTransmission</plugin>
+        <actuator name="left_actuator" role="left_actuator"/>
+        <joint name="left_wheel_joint" role="left_wheel_joint">
+          <mechanical_reduction>-1.0</mechanical_reduction>
+          <offset>0.0</offset>
+        </joint>
+      </transmission>
+
+      <transmission name="right_transmission">
+        <plugin>transmission_interface/SimpleTransmission</plugin>
+        <actuator name="right_actuator" role="right_actuator"/>
+        <joint name="right_wheel_joint" role="right_wheel_joint">
+          <mechanical_reduction>1.0</mechanical_reduction>
+          <offset>0.0</offset>
+        </joint>
+      </transmission -->
+
+    </ros2_control>
+
+</robot>
