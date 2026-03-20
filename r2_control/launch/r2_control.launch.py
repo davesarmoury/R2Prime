@@ -57,10 +57,10 @@ def generate_launch_description():
     )
 
     nodes = [
-        #control_node,
-        #joint_state_broadcaster_spawner,
+        control_node,
+        joint_state_broadcaster_spawner,
         static_232_node,
-        #delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
+        delay_robot_controller_spawner_after_joint_state_broadcaster_spawner,
     ]
 
     return LaunchDescription(declared_arguments + nodes)
