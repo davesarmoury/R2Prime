@@ -61,3 +61,10 @@
     cargo install spotifyd --locked
 
     spotifyd -d R2D2
+
+## ODrive
+
+    python3 -m pip install odrive --upgrade
+    pip3 install pyusb libusb pyelftools
+    odrivetool install-bootloader
+    odrivetool new-dfu
