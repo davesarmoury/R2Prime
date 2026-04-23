@@ -44,6 +44,21 @@
     cd ..
     rosdep install --from-paths src --ignore-src -y
 
+## PS4 Control
+
+    sudo bluetoothctl
+    agent on
+    scan on
+    # hold down PS and Share until light starts flashing
+    # watch bluetoothctl for Wireless Controller and note the MAC
+
+    trust <mac>
+    pair <mac>
+    connect <mac>
+    exit
+
+    sudo usermod -a -G input 
+
 ## CAN
 
     sudo /opt/nvidia/jetson-io/jetson-io.py

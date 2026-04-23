@@ -1,25 +1,34 @@
-import os
-
-from ament_index_python.packages import get_package_share_directory
-
-import launch
-import launch_ros.actions
-
+from launch import LaunchDescription
+from launch.substitutions import EnvironmentVariable, PathJoinSubstitution
+from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
+    filepath_config_joy = PathJoinSubstitution(
+        [FindPackageShare('r2_control'), 'config', ('teleop.yaml')]
+    )
 
-    config_directory = os.path.join(get_package_share_directory('r2_control'), 'config')
-    params = os.path.join(config_directory, 'teleop.yaml')
+    node_joy = Node(
+        package='joy',
+        executable='joy_node',
+        output='screen',
+        name='joy_node',
+        parameters=[filepath_config_joy]
+    )
 
-    return launch.LaunchDescription([
-        launch_ros.actions.Node(
-            package='joy', executable='joy_node', name='joy_node',
-            parameters=[params]),
+    node_teleop_twist_joy = Node(
+        package='teleop_twist_joy',
+        executable='teleop_node',
+        output='screen',
+        name='teleop_twist_joy_node',
+        parameters=[filepath_config_joy],
+        remappings=[
+            ('cmd_vel', '/diff_drive_controller/cmd_vel'),
+        ],
+    )
 
-        launch_ros.actions.Node(
-            package='teleop_twist_joy', executable='teleop_node',
-            name='teleop_twist_joy_node',
-            parameters=[params, {'publish_stamped_twist': True}],
-            remappings={('/cmd_vel', '/diff_drive_controller/cmd_vel')},
-            ),
-        ])
+
+    ld = LaunchDescription()
+    ld.add_action(node_joy)
+    ld.add_action(node_teleop_twist_joy)
+    return ld

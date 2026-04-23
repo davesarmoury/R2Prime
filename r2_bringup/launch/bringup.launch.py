@@ -6,9 +6,11 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     desc_launch = IncludeLaunchDescription(PathJoinSubstitution([PathJoinSubstitution([FindPackageShare('r2_description'), 'launch']), 'description.launch.py']))
     control_launch = IncludeLaunchDescription(PathJoinSubstitution([PathJoinSubstitution([FindPackageShare('r2_control'), 'launch']), 'r2_control.launch.py']))
+    teleop_launch = IncludeLaunchDescription(PathJoinSubstitution([PathJoinSubstitution([FindPackageShare('r2_control'), 'launch']), 'teleop.launch.py']))
 
     # Return the LaunchDescription
     return LaunchDescription([
         desc_launch,
         control_launch,
+        teleop_launch,
     ])
