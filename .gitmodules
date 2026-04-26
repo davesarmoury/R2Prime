@@ -7,3 +7,6 @@
 [submodule "ros_odrive"]
 	path = ros_odrive
 	url = https://github.com/odriverobotics/ros_odrive.git
+[submodule "zed-ros2-wrapper"]
+	path = zed-ros2-wrapper
+	url = https://github.com/stereolabs/zed-ros2-wrapper.git
