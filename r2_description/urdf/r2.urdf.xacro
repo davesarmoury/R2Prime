@@ -76,7 +76,7 @@
 
   <link name="dome_link">
     <visual>
-      <origin xyz="0 0 -0.829076" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://r2_description/meshes/R2_Dome.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -84,6 +84,194 @@
     </visual>
   </link>
 
+  <!-- HEAD-->
+  <link name="panel_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/Panel1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_1_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <parent link="dome_link" />
+    <child link="panel_1" />
+  </joint>
+
+  <link name="panel_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/Panel2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_2_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <parent link="dome_link" />
+    <child link="panel_2" />
+  </joint>
+
+  <link name="panel_3">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/Panel3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_3_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <parent link="dome_link" />
+    <child link="panel_3" />
+  </joint>
+
+  <link name="panel_4">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/Panel4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_4_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <parent link="dome_link" />
+    <child link="panel_4" />
+  </joint>
+
+  <link name="panel_5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/Panel5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_5_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <parent link="dome_link" />
+    <child link="panel_5" />
+  </joint>
+
+  <link name="panel_6">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/Panel6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_6_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <parent link="dome_link" />
+    <child link="panel_6" />
+  </joint>
+
+  <link name="panel_7">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/PanelTop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_7_joint" type="revolute">
+    <origin xyz="0.000835055 -0.135122 0.203276" rpy="0 0 1.5707" />
+    <parent link="dome_link" />
+    <child link="panel_7" />
+    <axis xyz="0 -1 0" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.7" velocity="10.0" />
+  </joint>
+
+  <link name="panel_8">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/PanelTop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_8_joint" type="revolute">
+    <origin xyz="0.116446 -0.0678808 0.203276" rpy="0 0 2.6180" />
+    <parent link="dome_link" />
+    <child link="panel_8" />
+    <axis xyz="0 -1 0" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.7" velocity="10.0" />
+  </joint>
+
+  <link name="panel_9">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/PanelTop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_9_joint" type="revolute">
+    <origin xyz="0.116446 0.0678808 0.203276" rpy="0 0 3.6652" />
+    <parent link="dome_link" />
+    <child link="panel_9" />
+    <axis xyz="0 -1 0" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.7" velocity="10.0" />
+  </joint>
+
+  <link name="panel_10">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/PanelTop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_10_joint" type="revolute">
+    <origin xyz="0.000835055 0.135122 0.203276" rpy="0 0 4.7124" />
+    <parent link="dome_link" />
+    <child link="panel_10" />
+    <axis xyz="0 -1 0" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.7" velocity="10.0" />
+  </joint>
+
+  <link name="panel_11">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://r2_description/meshes/PanelTop.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Blu"> <color rgba="0.1 0.1 0.9 1.0"/> </material>
+    </visual>
+  </link>
+
+  <joint name="panel_11_joint" type="revolute">
+    <origin xyz="-0.116446 -0.0678808 0.203276" rpy="0 0 0.5236" />
+    <parent link="dome_link" />
+    <child link="panel_11" />
+    <axis xyz="0 -1 0" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.7" velocity="10.0" />
+  </joint>
+
+  <!-- /HEAD -->
   <joint name="center_leg_joint" type="prismatic">
     <origin xyz="0 0 -0.56548" rpy="0 0 0" />
     <parent link="body_link" />
