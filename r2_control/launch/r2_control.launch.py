@@ -45,7 +45,8 @@ def generate_launch_description():
     static_232_node = Node(
         package="r2_control",
         executable="static_323.py",
-        output="both"
+        output="both",
+        parameters=[{"num_legs":2}]
     )
 
     delay_robot_controller_spawner_after_joint_state_broadcaster_spawner = RegisterEventHandler(

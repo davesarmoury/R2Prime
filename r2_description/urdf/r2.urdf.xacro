@@ -84,10 +84,12 @@
     </visual>
   </link>
 
-  <joint name="center_leg_joint" type="fixed">
+  <joint name="center_leg_joint" type="prismatic">
     <origin xyz="0 0 -0.56548" rpy="0 0 0" />
     <parent link="body_link" />
     <child link="center_leg_link" />
+    <axis xyz="0 0 1" rpy="0 0 0" />
+    <limit effort="0" lower="0" upper="0.255" velocity="10.0" />
   </joint>
 
   <link name="center_leg_link">
