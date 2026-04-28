@@ -70,6 +70,16 @@
 
     sudo ip link set can0 up type can bitrate 250000
 
+## Jtop
+
+A fantastic utility for monitoring a jetson.  Install it with
+
+    sudo pip3 install -U jetson-stats
+
+After a restart, run it with
+
+    jtop
+
 ## Spotify
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

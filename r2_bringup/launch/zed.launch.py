@@ -14,13 +14,14 @@ def generate_launch_description():
         launch_arguments={
             "camera_name": "zedxm",
             "camera_model": "zedxm",
+            "publish_tf": "false",
             "publish_urdf": "false",
             "ros_params_override_path": os.path.join(get_package_share_directory('r2_bringup'), 'config', 'zedxm.yaml'),
         }.items(),
     )
 
     launches = [
-        head_zed_launch,
+        zed_launch,
     ]
 
     return LaunchDescription(launches)
