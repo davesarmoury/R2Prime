@@ -68,7 +68,7 @@
 ![Configure Manually](docs/jetson-config-3.png)
 ![Configure Manually](docs/jetson-config-4.png)
 
-    sudo ip link set can0 up type can bitrate 1000000
+    sudo ip link set can0 up type can bitrate 250000
 
 ## Spotify
 

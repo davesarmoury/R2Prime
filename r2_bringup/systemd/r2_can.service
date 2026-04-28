@@ -1,0 +1,10 @@
+[Unit]
+Description=Auto Initialize CAN modules
+
+[Service]
+ExecStart=/usr/local/bin/r2_can_activate.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

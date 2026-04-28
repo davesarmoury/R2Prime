@@ -1,0 +1,11 @@
+[Unit]
+Description="Astromech Startup"
+After=network.target
+
+[Service]
+Type=simple
+User=davesarmoury
+ExecStart=/usr/local/bin/r2.sh
+
+[Install]
+WantedBy=multi-user.target
